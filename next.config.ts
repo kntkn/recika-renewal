@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   output: "export",
   basePath: "/recika-renewal",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
