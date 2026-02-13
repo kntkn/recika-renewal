@@ -17,25 +17,26 @@ export function NewsPreview() {
   const t = useTranslations("news");
 
   return (
-    <section className="section-padding bg-surface-warm">
+    <section className="section-padding bg-background">
       <Container>
         <SectionHeading title={t("title")} subtitle={t("subtitle")} />
 
-        <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerChildren className="divide-y divide-border">
           {newsItems.map((i) => (
             <StaggerItem key={i}>
-              <article className="group rounded-2xl border border-border bg-background p-6 transition-colors duration-200 hover:border-accent/30">
-                <div className="flex items-center gap-3">
+              <article className="group flex flex-col gap-3 py-8 transition-colors duration-200 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:gap-8">
+                <div className="flex items-center gap-4 sm:min-w-[200px]">
                   <time className="text-sm tabular-nums text-muted-foreground">
                     {t(`news_${i}_date`)}
                   </time>
-                  <span className="rounded-full bg-foreground/5 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                  <span className="rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5 text-xs font-medium text-accent">
                     {t(`news_${i}_category`)}
                   </span>
                 </div>
-                <h3 className="mt-4 text-base font-medium leading-snug text-balance group-hover:text-accent transition-colors duration-200">
+                <h3 className="flex-1 text-base font-medium leading-snug text-balance transition-colors duration-200 group-hover:text-accent">
                   {t(`news_${i}_title`)}
                 </h3>
+                <ArrowRight className="hidden size-4 text-muted-foreground/30 transition-all duration-200 group-hover:translate-x-1 group-hover:text-accent sm:block" />
               </article>
             </StaggerItem>
           ))}

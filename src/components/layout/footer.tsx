@@ -8,23 +8,27 @@ export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="border-t border-border bg-foreground text-primary-foreground">
+    <footer className="bg-foreground text-primary-foreground">
+      {/* Accent top line */}
+      <div className="h-px bg-accent/20" />
+
       <Container className="section-padding">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Company */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <p className="font-serif text-2xl">{t("company_name_en").split(" ")[0]}</p>
-            <p className="mt-2 text-sm text-primary-foreground/60">
+            <p className="font-serif text-2xl tracking-tight">{t("company_name_en").split(" ")[0]}</p>
+            <p className="mt-2 text-sm text-primary-foreground/40">
               {t("company_name")}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/60">
+            <div className="mt-4 h-px w-8 bg-accent/30" />
+            <p className="mt-4 text-sm leading-relaxed text-primary-foreground/40">
               {t("address")}
             </p>
           </div>
 
           {/* Pages */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent/60">
               {t("pages_title")}
             </p>
             <nav className="mt-4 flex flex-col gap-3" aria-label="Footer pages">
@@ -39,7 +43,7 @@ export function Footer() {
                   <Link
                     key={item.key}
                     href={item.href}
-                    className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground"
+                    className="text-sm text-primary-foreground/40 transition-colors hover:text-primary-foreground"
                   >
                     {t(item.key)}
                   </Link>
@@ -50,7 +54,7 @@ export function Footer() {
 
           {/* Business */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent/60">
               {t("business_title")}
             </p>
             <nav className="mt-4 flex flex-col gap-3" aria-label="Footer business">
@@ -59,7 +63,7 @@ export function Footer() {
                   <Link
                     key={key}
                     href="/business"
-                    className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground"
+                    className="text-sm text-primary-foreground/40 transition-colors hover:text-primary-foreground"
                   >
                     {t(key)}
                   </Link>
@@ -70,10 +74,10 @@ export function Footer() {
 
           {/* Company Info */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-accent/60">
               {t("info_title")}
             </p>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-primary-foreground/60">
+            <div className="mt-4 flex flex-col gap-3 text-sm text-primary-foreground/40">
               <p>{t("established")}</p>
               <p>{t("capital")}</p>
               <Link
@@ -87,7 +91,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 border-t border-primary-foreground/10 pt-8 text-center text-sm text-primary-foreground/40">
+        <div className="mt-16 border-t border-primary-foreground/5 pt-8 text-center text-xs text-primary-foreground/30">
           <p>&copy; {t("copyright")}</p>
         </div>
       </Container>

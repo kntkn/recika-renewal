@@ -36,14 +36,14 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         "pb-[env(safe-area-inset-top)]",
         scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
+          ? "bg-surface-dark/90 backdrop-blur-lg border-b border-primary-foreground/5"
           : "bg-transparent"
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="text-xl font-semibold tracking-tight">
-          <span className="font-serif text-2xl">RECIKA</span>
+        <Link href="/" className="group flex items-center gap-2">
+          <span className="font-serif text-2xl text-primary-foreground tracking-tight">RECIKA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,7 +52,7 @@ export function Header() {
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              className="text-sm font-medium text-primary-foreground/60 transition-colors duration-200 hover:text-primary-foreground"
             >
               {t(item.key)}
             </Link>

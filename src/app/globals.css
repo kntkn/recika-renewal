@@ -26,8 +26,8 @@
   --accent: #c27830;
   --accent-light: #d4935a;
   --surface-dark: #0a0a0a;
-  --surface-dark-muted: #171717;
-  --surface-warm: #faf7f2;
+  --surface-dark-muted: #141414;
+  --surface-warm: #f7f4ef;
   --muted-foreground: #737373;
   --border: #e5e5e5;
 }
@@ -46,7 +46,6 @@
     font-feature-settings: "palt";
   }
 
-  /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -61,7 +60,21 @@
 
 @layer utilities {
   .section-padding {
-    padding-top: clamp(4rem, 10vw, 8rem);
-    padding-bottom: clamp(4rem, 10vw, 8rem);
+    padding-top: clamp(5rem, 12vw, 9rem);
+    padding-bottom: clamp(5rem, 12vw, 9rem);
+  }
+
+  /* Subtle dot grid pattern for dark sections */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255 255 255 / 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Fine line grid for accents */
+  .line-grid {
+    background-image:
+      linear-gradient(rgba(255 255 255 / 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
   }
 }
